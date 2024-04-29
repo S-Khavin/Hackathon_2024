@@ -13,15 +13,17 @@ void main() async {
   runApp(GameWidget(game: SumoWrestlerGame(riveFile: riveFile)));
 }
 
-class SumoWrestlerGame extends FlameGame with HasGameRef{
+class SumoWrestlerGame extends FlameGame with HasGameRef {
   final RiveFile riveFile;
   SumoWrestlerGame({required this.riveFile});
+  
   @override
   Future<void> onLoad() async {
-    add(Player(playerArtboard: riveFile.artboardByName('Player')!
-    )
-    ..position = Vector2(gameRef.size.x/2, gameRef.size.y/2)
-    ..size = Vector2(100, 100),
+    add(
+      Player(playerArtboard: riveFile.artboardByName('Player')!)
+        ..position = Vector2(gameRef.size.x / 2, gameRef.size.y / 2)
+        ..anchor = Anchor.center
+        ..size = Vector2(25, 25),
     );
   }
 }
