@@ -9,7 +9,6 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   RiveFile riveFile = await RiveFile.asset('assets/rive/rive.riv');
   Flame.device.fullScreen();
-  Flame.device.setLandscape();
   runApp(GameWidget(game: SumoWrestlerGame(riveFile: riveFile)));
 }
 
